@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <h1>Ajax Request Response</h1>
+
+    <h2>Click on the button to send ajax request</h2>
+    <button>Send</button>
+
+    <h2 id="p1"></h2>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.ajax("info.txt", {
+                    success: function (data) {
+                        
+                        $("#p1").append(data);
+                    },
+                    error: function (errorMessage) {
+
+                        $("#p1").append("Error: File Missing<br> <br>" + errorMessage);
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

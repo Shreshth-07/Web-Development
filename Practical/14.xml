@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="xml.css"?>
+
+
+<note>
+    <to>To : OWNER</to>
+    <from>From : ADMIN</from>
+    <heading>Subject : Kal Milte hai ?</heading>
+    <body>
+        <sucess> Ok  bhai..</sucess>
+        <sucess> Nhi Bro...</sucess>
+    </body>
+</note>

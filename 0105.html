@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            JS
+        </title>
+        <script>
+            function ALERT()
+            {
+                alert("hello world")
+            }
+
+            function CONFIRM(){	 
+		        var x;
+
+			    if (confirm("Do you want to save changes?") == true) {
+				    x = "Data saved successfully!";
+			    } else {
+				    x = "Save Canceled!";
+			    }
+
+                document.getElementById("msg1").innerHTML = x;
+		    }
+
+            function PROMPT(){
+			var name = prompt("Enter Your Name:");
+    
+			if (name == null || name == "") {
+				document.getElementById("msg3").innerHTML = "You did not entert anything. Please enter your name again";
+			}
+			else
+			{
+				document.getElementById("msg3").innerHTML = "You enterted: " + name;
+			}
+		    }
+        
+            function abc()
+            {
+            alert(document.getElementById("a").value);
+            }
+
+            function bcd()
+            {
+            alert(document.getElementsByTagName("h3")[0].innerHTML);
+            }
+            function def()
+            {
+            alert(document.getElementsByTagName("h5")[0].innerHTML = "Modified Content");
+            }
+
+            function xyz()
+            {
+                let ele = document.getElementsByName("name");
+                alert(document.getElementById("demo").innerHTML = ele[0].tagName);
+            }
+     
+        </script>
+    </head>
+    <body>
+
+        <section class="question1">
+        <p>Example of alert</p>
+        <button onclick="ALERT()">ALERT</button>
+        <br>
+        <p>Example of confirm</p>
+        <button onclick="CONFIRM()">CONFIRM</button>
+        <p id="msg1"></p>
+        <br>
+        <p>Example of prompt</p>
+        <button onclick="PROMPT()">PROMPT</button>
+        <p id="msg3"></p>
+        </section>
+
+        <br>
+        <br>
+        <section class="question2">
+        <p>ELEMENT BY ID</p>
+        <form>
+            <input type="text" id="a">
+            <input type="submit" onclick="abc()" placeholder="SUBMIT"> 
+        </form>
+        <br>
+        <p>ELEMENT BY TAG NAME</p>
+        <h3>This is context 1</h3>
+        <button onclick="bcd()">TAGNAME</button>
+        <p>Modify Tag Content</p>
+        <h5>This is context 2</h5>
+        <h5>This is context 2</h5>
+        <h5 >This is context 2</h5>
+        <button onclick="def()">TAGNAME</button>
+        <br>
+        <p>ELEMENT BY NAME</p>
+        <p>First Name : <input type="text" name="name" value="Shreshth"></p>
+        <p>Last Name : <input type="text" name="name" value="Pratap Singh"></p>
+        <input type="submit" onclick="xyz()" placeholder="SUBMIT"> 
+        <p id="demo"></p>
+        </section>
+
+
+    </body>
+</html>

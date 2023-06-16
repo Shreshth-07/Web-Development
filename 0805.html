@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ajax Calling</title>
+</head>
+
+<body>
+
+    <div id="demo">
+
+        <h1>The HttpRequest Object</h1>
+
+        <button type="button" onclick="loadDoc('info.txt', myFunction)">Change Content
+        </button>
+    </div>
+
+    <script>
+        function loadDoc(url, cFunction) {
+            var x;
+            x = new XMLHttpRequest();
+            x.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cFunction(this);
+                }
+            };
+            x.open("GET", url, true);
+            x.send();
+        }
+        function myFunction(x) {
+            document.getElementById("demo").innerHTML =
+                x.responseText;
+        }
+    </script>
+
+
+</body>
+
+</html>

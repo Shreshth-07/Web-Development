@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Practical-13</title> 
+        <style>
+            body 
+            {
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function newElement()
+            {
+                const newEle = document.createElement("p");
+            const content = document.createTextNode("New Element Created.....");
+            newEle.appendChild(content);
+            
+            const element = document.getElementById("d1");
+            element.appendChild(newEle);
+            }
+            function changeContent()
+            {
+                //Changing the content of element
+                document.getElementById("p1").innerHTML = "This is Modified Content";
+            }
+            function changeStyle()
+            {
+                // Changing the style of element
+                document.getElementById("p1").style.color = "blue";
+            }
+            function removeEle()
+            {
+                const rmv =  document.getElementById("p2");
+                rmv.remove();
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Practical-13</h2>
+
+        <div id="d1">
+            <p id="p1" style="color: red;">This is Paragraph</p>
+            <p id="p2">Hello World.....</p>
+            <button onclick="newElement()">For Creating Element</button><br><br>
+            <button onclick="changeContent()">For Changing Content</button><br><br>
+            <button onclick="changeStyle()">For Changing Style</button><br><br>
+            <button onclick="removeEle()">For Deleting element</button><br><br>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practical-12</title>
+    <style>
+        body {
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function ALERT()
+            {
+                alert("hello world")
+            }
+
+            function CONFIRM(){	 
+		        var x;
+
+			    if (confirm("Do you want to save changes?") == true) {
+				    x = "Data saved successfully!";
+			    } else {
+				    x = "Save Canceled!";
+			    }
+
+                document.getElementById("msg1").innerHTML = x;
+		    }
+
+            function PROMPT(){
+			var name = prompt("Enter Your Name:");
+    
+			if (name == null || name == "") {
+				document.getElementById("msg3").innerHTML = "You did not entert anything. Please enter your name again";
+			}
+			else
+			{
+				document.getElementById("msg3").innerHTML = "You enterted: " + name;
+			}
+		    }
+    </script>
+</head>
+
+<body>
+    <h2>Practical-12</h2>
+    <p>Example of alert</p>
+    <button onclick="ALERT()">ALERT</button>
+    <br>
+    <p>Example of confirm</p>
+    <button onclick="CONFIRM()">CONFIRM</button>
+    <p id="msg1"></p>
+    <br>
+    <p>Example of prompt</p>
+    <button onclick="PROMPT()">PROMPT</button>
+    <p id="msg3"></p>
+
+</body>
+
+</html>

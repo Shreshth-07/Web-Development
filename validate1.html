@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validate</title>
+<script>
+function abc()
+{
+	var name = document.forms["myForm"]["n"].value;
+	var pass = document.forms["myForm"]["p"].value;
+    var gen = document.forms["myForm"]["g"].value;
+    var hob = document.forms["myForm"]["h[]"];
+	
+	if(name==="")
+	{
+		alert("Enter name");
+		return false;
+	}
+	
+	if(pass==="")
+	{
+		alert("Enter pass");
+		return false;
+	}
+	
+	if(gen==="")
+	{
+		alert("Enter gen");
+		return false;
+	}
+	
+	var selected = false;
+	for(var i=0;i<hob.length;i++)
+	{
+		if(hob[i].checked)
+		{
+			selected = true;
+			break;
+		}
+	}
+	
+	if(!selected)
+	{
+		alert("Select hobby");
+		return false;
+	}
+	
+	return true;
+}
+</script>
+</head>
+<body>
+<form name="myForm" method="post" onsubmit="return abc()" action="abc.php">
+<br>
+Name:<input type="text" name="n"><br>
+Password:<input type="text" name="p"><br>
+Gender:<br>Male<input type="radio" name="g"><br>
+	Female<input type="radio" name="g"><br>
+Hobbies:<br>
+	Football:<input type="checkbox" name="h[]"><br>
+	Cricket:<input type="checkbox" name="h[]"><br>
+
+Your Fav Color:<input type="text" name="c"><br>
+	
+<input type="submit" value="submit">
+</form>
+</body>
+</html>
+

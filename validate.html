@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <script>
+    function validateForm() {
+      // Get form inputs
+      var name = document.forms["myForm"]["name"].value;
+      var email = document.forms["myForm"]["email"].value;
+      var gender = document.forms["myForm"]["gender"].value;
+      var hobbies = document.forms["myForm"]["hobbies[]"];
+
+      // Validate name field
+      if (name === "") {
+        alert("Name must be filled out");
+        return false;
+      }
+
+      // Validate email field
+      if (email === "") {
+        alert("Email must be filled out");
+        return false;
+      }
+
+      // Validate gender field
+      if (gender === "") {
+        alert("Please select a gender");
+        return false;
+      }
+
+      // Validate at least one hobby is selected
+      var hobbySelected = false;
+      for (var i = 0; i < hobbies.length; i++) {
+        if (hobbies[i].checked) {
+          hobbySelected = true;
+          break;
+        }
+      }
+      if (!hobbySelected) {
+        alert("Please select at least one hobby");
+        return false;
+      }
+
+      // Form is valid, allow submission
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h1>Form Validation</h1>
+  <form name="myForm" onsubmit="return validateForm()" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+    <br>
+
+    <label>Hobbies:</label>
+    <input type="checkbox" id="hobby1" name="hobbies[]" value="hobby1">
+    <label for="hobby1">Hobby 1</label>
+    <input type="checkbox" id="hobby2" name="hobbies[]" value="hobby2">
+    <label for="hobby2">Hobby 2</label>
+    <input type="checkbox" id="hobby3" name="hobbies[]" value="hobby3">
+    <label for="hobby3">Hobby 3</label>
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+

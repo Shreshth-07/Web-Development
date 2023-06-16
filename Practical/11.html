@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Practical-11</title> 
+        <style>
+            body 
+            {
+                align-items: center;
+                text-align: center;
+            }
+            p
+            {
+                font-size: 20px;
+                font-weight: 700;
+            }
+        </style>
+        <script>
+            function domManipulation()
+            {
+                alert("Modified Content");
+                document.getElementsByTagName("h1")[0].innerHTML = "Hye EveryOne";
+                document.getElementsByTagName("h2")[0].innerHTML = "I don't Know";
+                document.getElementsByTagName("h3")[0].innerHTML = "Gaurdian of galaxy";
+            }
+        </script>
+
+    </head>
+    <body>
+        <p>Practical-11</p>
+
+        <h1>Hello World</h1>
+        <h2>Who are You</h2>
+        <h3>I am groot</h3>
+        <button onclick="domManipulation()">Change</button>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+note
+{
+    background-color: cadetblue;
+    text-align: center;
+    align-items: center;
+  
+}
+to
+{
+    color: blue;
+}
+from
+{
+    color: green;
+}
+heading
+{
+    color: brown;
+}
+body
+{
+    background-color: black;
+}
+sucess
+{
+    color: white;
+}
+to, from , heading , body , sucess{
+    display: block;
+}
